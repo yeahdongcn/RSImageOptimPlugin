@@ -14,6 +14,23 @@
 		D0F7B0EF18F4EFF10099D3BF /* RSImageOptimPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F7B0EE18F4EFF10099D3BF /* RSImageOptimPlugin.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D0CF220B18F53F4E003967CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0CF21F418F53F4C003967CF /* ImageOptim.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1107320486CEB800E47090;
+			remoteInfo = ImageOptim;
+		};
+		D0CF220D18F53F56003967CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0CF21F418F53F4C003967CF /* ImageOptim.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
+			remoteInfo = ImageOptim;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D000C08318F4F71100C08A62 /* RSWorkspaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSWorkspaceController.h; sourceTree = "<group>"; };
 		D000C08418F4F71100C08A62 /* RSWorkspaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSWorkspaceController.m; sourceTree = "<group>"; };
@@ -22,6 +39,7 @@
 		D000C09A18F4FF7B00C08A62 /* IDEFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEFoundation.h; sourceTree = "<group>"; };
 		D000C09B18F4FF7B00C08A62 /* IDEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEKit.h; sourceTree = "<group>"; };
 		D000C09C18F4FF7B00C08A62 /* IDESourceEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDESourceEditor.h; sourceTree = "<group>"; };
+		D0CF21F418F53F4C003967CF /* ImageOptim.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImageOptim.xcodeproj; path = ImageOptim/imageoptim/ImageOptim.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D0F7B0E018F4EFF10099D3BF /* RSImageOptimPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSImageOptimPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F7B0E318F4EFF10099D3BF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D0F7B0E518F4EFF10099D3BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,6 +73,14 @@
 				D000C09C18F4FF7B00C08A62 /* IDESourceEditor.h */,
 			);
 			path = XcodeClasses;
+			sourceTree = "<group>";
+		};
+		D0CF21F518F53F4C003967CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0CF220C18F53F4E003967CF /* ImageOptim.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		D0F7B0D718F4EFF00099D3BF = {
@@ -99,6 +125,7 @@
 		D0F7B0E818F4EFF10099D3BF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0CF21F418F53F4C003967CF /* ImageOptim.xcodeproj */,
 				D0F7B0E918F4EFF10099D3BF /* RSImageOptimPlugin-Info.plist */,
 				D0F7B0EA18F4EFF10099D3BF /* InfoPlist.strings */,
 				D0F7B0F018F4EFF10099D3BF /* RSImageOptimPlugin-Prefix.pch */,
@@ -120,6 +147,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D0CF220E18F53F56003967CF /* PBXTargetDependency */,
 			);
 			name = RSImageOptimPlugin;
 			productName = RSImageOptimPlugin;
@@ -146,12 +174,28 @@
 			mainGroup = D0F7B0D718F4EFF00099D3BF;
 			productRefGroup = D0F7B0E118F4EFF10099D3BF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D0CF21F518F53F4C003967CF /* Products */;
+					ProjectRef = D0CF21F418F53F4C003967CF /* ImageOptim.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D0F7B0DF18F4EFF10099D3BF /* RSImageOptimPlugin */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D0CF220C18F53F4E003967CF /* ImageOptim.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ImageOptim.app;
+			remoteRef = D0CF220B18F53F4E003967CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D0F7B0DE18F4EFF10099D3BF /* Resources */ = {
@@ -175,6 +219,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0CF220E18F53F56003967CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ImageOptim;
+			targetProxy = D0CF220D18F53F56003967CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D0F7B0EA18F4EFF10099D3BF /* InfoPlist.strings */ = {
