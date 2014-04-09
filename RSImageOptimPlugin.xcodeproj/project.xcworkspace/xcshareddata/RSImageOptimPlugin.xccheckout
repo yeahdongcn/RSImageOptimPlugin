@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>38F1809C-0EE3-4C4B-87E2-5C5752EEF07D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RSImageOptimPlugin</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C8AC7991-3492-49A3-ABA1-FA0A797BD9BE</key>
+		<string>https://github.com/yeahdongcn/RSImageOptimPlugin.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RSImageOptimPlugin.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C8AC7991-3492-49A3-ABA1-FA0A797BD9BE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yeahdongcn/RSImageOptimPlugin.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C8AC7991-3492-49A3-ABA1-FA0A797BD9BE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C8AC7991-3492-49A3-ABA1-FA0A797BD9BE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RSImageOptimPlugin</string>
+		</dict>
+	</array>
+</dict>
+</plist>

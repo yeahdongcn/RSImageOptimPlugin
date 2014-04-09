@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D000C08518F4F71100C08A62 /* RSWorkspaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D000C08418F4F71100C08A62 /* RSWorkspaceController.m */; };
+		D0F7B0E418F4EFF10099D3BF /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F7B0E318F4EFF10099D3BF /* AppKit.framework */; };
+		D0F7B0E618F4EFF10099D3BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F7B0E518F4EFF10099D3BF /* Foundation.framework */; };
+		D0F7B0EC18F4EFF10099D3BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0F7B0EA18F4EFF10099D3BF /* InfoPlist.strings */; };
+		D0F7B0EF18F4EFF10099D3BF /* RSImageOptimPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F7B0EE18F4EFF10099D3BF /* RSImageOptimPlugin.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D080E0E518F4F0410024371E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D080E0CE18F4F0400024371E /* ImageOptim.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1107320486CEB800E47090;
+			remoteInfo = ImageOptim;
+		};
+		D080E0E718F4F04F0024371E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D080E0CE18F4F0400024371E /* ImageOptim.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
+			remoteInfo = ImageOptim;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D000C08318F4F71100C08A62 /* RSWorkspaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSWorkspaceController.h; sourceTree = "<group>"; };
+		D000C08418F4F71100C08A62 /* RSWorkspaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSWorkspaceController.m; sourceTree = "<group>"; };
+		D000C09818F4FF7B00C08A62 /* DVTFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTFoundation.h; sourceTree = "<group>"; };
+		D000C09918F4FF7B00C08A62 /* DVTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTKit.h; sourceTree = "<group>"; };
+		D000C09A18F4FF7B00C08A62 /* IDEFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEFoundation.h; sourceTree = "<group>"; };
+		D000C09B18F4FF7B00C08A62 /* IDEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEKit.h; sourceTree = "<group>"; };
+		D000C09C18F4FF7B00C08A62 /* IDESourceEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDESourceEditor.h; sourceTree = "<group>"; };
+		D080E0CE18F4F0400024371E /* ImageOptim.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImageOptim.xcodeproj; path = ../../imageoptim/ImageOptim.xcodeproj; sourceTree = "<group>"; };
+		D0F7B0E018F4EFF10099D3BF /* RSImageOptimPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSImageOptimPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F7B0E318F4EFF10099D3BF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D0F7B0E518F4EFF10099D3BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0F7B0E918F4EFF10099D3BF /* RSImageOptimPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RSImageOptimPlugin-Info.plist"; sourceTree = "<group>"; };
+		D0F7B0EB18F4EFF10099D3BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D0F7B0ED18F4EFF10099D3BF /* RSImageOptimPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSImageOptimPlugin.h; sourceTree = "<group>"; };
+		D0F7B0EE18F4EFF10099D3BF /* RSImageOptimPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSImageOptimPlugin.m; sourceTree = "<group>"; };
+		D0F7B0F018F4EFF10099D3BF /* RSImageOptimPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSImageOptimPlugin-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0F7B0DD18F4EFF10099D3BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F7B0E418F4EFF10099D3BF /* AppKit.framework in Frameworks */,
+				D0F7B0E618F4EFF10099D3BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D000C09718F4FF7B00C08A62 /* XcodeClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D000C09818F4FF7B00C08A62 /* DVTFoundation.h */,
+				D000C09918F4FF7B00C08A62 /* DVTKit.h */,
+				D000C09A18F4FF7B00C08A62 /* IDEFoundation.h */,
+				D000C09B18F4FF7B00C08A62 /* IDEKit.h */,
+				D000C09C18F4FF7B00C08A62 /* IDESourceEditor.h */,
+			);
+			path = XcodeClasses;
+			sourceTree = "<group>";
+		};
+		D080E0CF18F4F0400024371E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D080E0E618F4F0410024371E /* ImageOptim.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0F7B0D718F4EFF00099D3BF = {
+			isa = PBXGroup;
+			children = (
+				D0F7B0E718F4EFF10099D3BF /* RSImageOptimPlugin */,
+				D0F7B0E218F4EFF10099D3BF /* Frameworks */,
+				D0F7B0E118F4EFF10099D3BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0F7B0E118F4EFF10099D3BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0F7B0E018F4EFF10099D3BF /* RSImageOptimPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0F7B0E218F4EFF10099D3BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0F7B0E318F4EFF10099D3BF /* AppKit.framework */,
+				D0F7B0E518F4EFF10099D3BF /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0F7B0E718F4EFF10099D3BF /* RSImageOptimPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				D000C09718F4FF7B00C08A62 /* XcodeClasses */,
+				D000C08318F4F71100C08A62 /* RSWorkspaceController.h */,
+				D000C08418F4F71100C08A62 /* RSWorkspaceController.m */,
+				D0F7B0ED18F4EFF10099D3BF /* RSImageOptimPlugin.h */,
+				D0F7B0EE18F4EFF10099D3BF /* RSImageOptimPlugin.m */,
+				D0F7B0E818F4EFF10099D3BF /* Supporting Files */,
+			);
+			path = RSImageOptimPlugin;
+			sourceTree = "<group>";
+		};
+		D0F7B0E818F4EFF10099D3BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D080E0CE18F4F0400024371E /* ImageOptim.xcodeproj */,
+				D0F7B0E918F4EFF10099D3BF /* RSImageOptimPlugin-Info.plist */,
+				D0F7B0EA18F4EFF10099D3BF /* InfoPlist.strings */,
+				D0F7B0F018F4EFF10099D3BF /* RSImageOptimPlugin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0F7B0DF18F4EFF10099D3BF /* RSImageOptimPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0F7B0F318F4EFF10099D3BF /* Build configuration list for PBXNativeTarget "RSImageOptimPlugin" */;
+			buildPhases = (
+				D0F7B0DC18F4EFF10099D3BF /* Sources */,
+				D0F7B0DD18F4EFF10099D3BF /* Frameworks */,
+				D0F7B0DE18F4EFF10099D3BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D080E0E818F4F04F0024371E /* PBXTargetDependency */,
+			);
+			name = RSImageOptimPlugin;
+			productName = RSImageOptimPlugin;
+			productReference = D0F7B0E018F4EFF10099D3BF /* RSImageOptimPlugin.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0F7B0D818F4EFF00099D3BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = P.D.Q.;
+			};
+			buildConfigurationList = D0F7B0DB18F4EFF00099D3BF /* Build configuration list for PBXProject "RSImageOptimPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D0F7B0D718F4EFF00099D3BF;
+			productRefGroup = D0F7B0E118F4EFF10099D3BF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D080E0CF18F4F0400024371E /* Products */;
+					ProjectRef = D080E0CE18F4F0400024371E /* ImageOptim.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D0F7B0DF18F4EFF10099D3BF /* RSImageOptimPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D080E0E618F4F0410024371E /* ImageOptim.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ImageOptim.app;
+			remoteRef = D080E0E518F4F0410024371E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0F7B0DE18F4EFF10099D3BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F7B0EC18F4EFF10099D3BF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0F7B0DC18F4EFF10099D3BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D000C08518F4F71100C08A62 /* RSWorkspaceController.m in Sources */,
+				D0F7B0EF18F4EFF10099D3BF /* RSImageOptimPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D080E0E818F4F04F0024371E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ImageOptim;
+			targetProxy = D080E0E718F4F04F0024371E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0F7B0EA18F4EFF10099D3BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F7B0EB18F4EFF10099D3BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0F7B0F118F4EFF10099D3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D0F7B0F218F4EFF10099D3BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D0F7B0F418F4EFF10099D3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSImageOptimPlugin/RSImageOptimPlugin-Prefix.pch";
+				INFOPLIST_FILE = "RSImageOptimPlugin/RSImageOptimPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		D0F7B0F518F4EFF10099D3BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSImageOptimPlugin/RSImageOptimPlugin-Prefix.pch";
+				INFOPLIST_FILE = "RSImageOptimPlugin/RSImageOptimPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0F7B0DB18F4EFF00099D3BF /* Build configuration list for PBXProject "RSImageOptimPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F7B0F118F4EFF10099D3BF /* Debug */,
+				D0F7B0F218F4EFF10099D3BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0F7B0F318F4EFF10099D3BF /* Build configuration list for PBXNativeTarget "RSImageOptimPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F7B0F418F4EFF10099D3BF /* Debug */,
+				D0F7B0F518F4EFF10099D3BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0F7B0D818F4EFF00099D3BF /* Project object */;
+}
