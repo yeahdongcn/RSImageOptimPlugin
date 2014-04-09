@@ -37,6 +37,15 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
     }
 }
 
+- (NSArray *)imageExtensions
+{
+    NSMutableArray *extensions = [NSMutableArray array];
+    [extensions addObjectsFromArray:@[@"png", @"PNG"]];
+    [extensions addObjectsFromArray:@[@"jpg", @"JPG", @"jpeg", @"JPEG"]];
+    [extensions addObjectsFromArray:@[@"gif", @"GIF"]];
+    return [NSArray arrayWithArray:extensions];
+}
+
 - (void)doImageOptimWithPath:(NSString *)path
 {
     NSURL *fileURL = [NSURL fileURLWithPath:path];
@@ -52,7 +61,7 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
 - (void)notificationListener:(NSNotification *)notification
 {
     if ([[notification name] isEqualToString:@"PBXBuildFileWasAddedToBuildPhaseNotification"]) {
-        NSString *description = [[[notification userInfo] objectForKey:@"PBXBuildFile"] description];
+        NSString *description = [[notification userInfo][@"PBXBuildFile"] description];
         description = [description stringByReplacingOccurrencesOfString:@"<" withString:@""];
         description = [description stringByReplacingOccurrencesOfString:@">" withString:@""];
         NSArray *components = [description componentsSeparatedByString:@":"];
@@ -61,7 +70,7 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
             sleep(2);
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString *filePath = [RSWorkspaceController pathForFileNameInCurrentWorkspace:fileName];
-                if (filePath) {
+                if (filePath && [[self imageExtensions] containsObject:[filePath pathExtension]]) {
                     [self doImageOptimWithPath:filePath];
                 }
             });
@@ -69,7 +78,7 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
     } else if ([[notification name] isEqualToString:@"DVTModelObjectGraphObjectsDidChangeNotificationName"]) {
         NSDictionary *userInfo = [notification userInfo];
         NSString *filePath = nil;
-        NSSet *insertedObjects = [userInfo objectForKey:@"DVTModelObjectGraphInsertedObjectsKeyName"];
+        NSSet *insertedObjects = userInfo[@"DVTModelObjectGraphInsertedObjectsKeyName"];
         for (id insertedObject in insertedObjects.allObjects) {
             if ([insertedObject isKindOfClass:NSClassFromString(@"IDESourceControlWorkingTreeGroup")]) {
                 IDESourceControlWorkingTreeGroup *group = insertedObject;
@@ -81,7 +90,7 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
             }
         }
         if (!filePath) {
-            NSSet *updatedObjects = [userInfo objectForKey:@"DVTModelObjectGraphUpdatedObjectsKeyName"];
+            NSSet *updatedObjects = userInfo[@"DVTModelObjectGraphUpdatedObjectsKeyName"];
             for (id updatedObject in updatedObjects.allObjects) {
                 if ([updatedObject isKindOfClass:NSClassFromString(@"IDESourceControlWorkingTreeGroup")]) {
                     IDESourceControlWorkingTreeGroup *group = updatedObject;
