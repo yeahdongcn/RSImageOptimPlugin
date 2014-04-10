@@ -60,22 +60,7 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
 
 - (void)notificationListener:(NSNotification *)notification
 {
-    if ([[notification name] isEqualToString:@"PBXBuildFileWasAddedToBuildPhaseNotification"]) {
-        NSString *description = [[notification userInfo][@"PBXBuildFile"] description];
-        description = [description stringByReplacingOccurrencesOfString:@"<" withString:@""];
-        description = [description stringByReplacingOccurrencesOfString:@">" withString:@""];
-        NSArray *components = [description componentsSeparatedByString:@":"];
-        NSString *fileName = [components lastObject];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            sleep(2);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSString *filePath = [RSWorkspaceController pathForFileNameInCurrentWorkspace:fileName];
-                if (filePath && [[self imageExtensions] containsObject:[filePath pathExtension]]) {
-                    [self doImageOptimWithPath:filePath];
-                }
-            });
-        });
-    } else if ([[notification name] isEqualToString:@"DVTModelObjectGraphObjectsDidChangeNotificationName"]) {
+    if ([[notification name] isEqualToString:@"DVTModelObjectGraphObjectsDidChangeNotificationName"]) {
         NSDictionary *userInfo = [notification userInfo];
         NSString *filePath = nil;
         NSSet *insertedObjects = userInfo[@"DVTModelObjectGraphInsertedObjectsKeyName"];
@@ -83,7 +68,14 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
             if ([insertedObject isKindOfClass:NSClassFromString(@"IDESourceControlWorkingTreeGroup")]) {
                 IDESourceControlWorkingTreeGroup *group = insertedObject;
                 NSString *pathString = group.filePath.pathString;
-                if ([[pathString pathExtension] isEqualToString:@"imageset"]) {
+                if (pathString && [[self imageExtensions] containsObject:[pathString pathExtension]]) {
+                    filePath = pathString;
+                    break;
+                }
+            } else if ([insertedObject isKindOfClass:NSClassFromString(@"IDESourceControlWorkingTreeItem")]) {
+                IDESourceControlWorkingTreeItem *item = insertedObject;
+                NSString *pathString = item.filePath.pathString;
+                if (pathString && [[self imageExtensions] containsObject:[pathString pathExtension]]) {
                     filePath = pathString;
                     break;
                 }
@@ -95,7 +87,15 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
                 if ([updatedObject isKindOfClass:NSClassFromString(@"IDESourceControlWorkingTreeGroup")]) {
                     IDESourceControlWorkingTreeGroup *group = updatedObject;
                     NSString *pathString = group.filePath.pathString;
-                    if ([[pathString pathExtension] isEqualToString:@"imageset"]) {
+                    NSLog(@"%@", pathString);
+                    if (pathString && [[self imageExtensions] containsObject:[pathString pathExtension]]) {
+                        filePath = pathString;
+                        break;
+                    }
+                } else if ([updatedObject isKindOfClass:NSClassFromString(@"IDESourceControlWorkingTreeItem")]) {
+                    IDESourceControlWorkingTreeItem *item = updatedObject;
+                    NSString *pathString = item.filePath.pathString;
+                    if (pathString && [[self imageExtensions] containsObject:[pathString pathExtension]]) {
                         filePath = pathString;
                         break;
                     }
@@ -113,10 +113,6 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:kRSImageOptimPluginAutoKey] boolValue]) {
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(notificationListener:)
-                                                     name:@"PBXBuildFileWasAddedToBuildPhaseNotification" object:nil];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(notificationListener:)
                                                      name:@"DVTModelObjectGraphObjectsDidChangeNotificationName" object:nil];
         
         NSLog(@"%@ %@", kRSImageOptimPlugin, @" start");
@@ -125,8 +121,6 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
 
 - (void)stopListen
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"PBXBuildFileWasAddedToBuildPhaseNotification" object:nil];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"DVTModelObjectGraphObjectsDidChangeNotificationName" object:nil];
     
     NSLog(@"%@ %@", kRSImageOptimPlugin, @" stop");
