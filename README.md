@@ -7,6 +7,7 @@ Xcode plugin to optimize images using [ImageOptim](https://github.com/pornel/Ima
 ![ImageOptim](https://raw.githubusercontent.com/yeahdongcn/RSImageOptimPlugin/master/ImageOptim-screenshot@2x.png)
 
 ##Requirements
+
 Xcode 5.0+ on OS X 10.9+.
 
 ##Installation
@@ -28,7 +29,6 @@ To uninstall, just remove the plugin from `~/Library/Application Support/Develop
 All the commands are laid at the bottom of the menu `File`.
 
 * Use the menu `ImageOptim` to optimize all images in the workspace immediately.
-
 * Use the menu `Enable Auto ImageOptim` to toggle whether automatic optimization should be enabled. Once this has been enabled, `ImageOptim` will be launched automatically to optimize the new added image files. 
 
 ##Thanks
