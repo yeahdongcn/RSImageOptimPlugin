@@ -143,6 +143,7 @@
 				D0F7B0DC18F4EFF10099D3BF /* Sources */,
 				D0F7B0DD18F4EFF10099D3BF /* Frameworks */,
 				D0F7B0DE18F4EFF10099D3BF /* Resources */,
+				D0A4618318F6D7A100B50DB6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,6 +208,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0A4618318F6D7A100B50DB6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r \"$BUILT_PRODUCTS_DIR/ImageOptim.app\" \"$TARGET_BUILD_DIR/$TARGET_NAME.xcplugin/\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0F7B0DC18F4EFF10099D3BF /* Sources */ = {

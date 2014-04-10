@@ -54,8 +54,9 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
 - (void)doImageOptimWithPathString:(NSString *)pathString
 {
     NSURL *fileURL = [NSURL fileURLWithPath:pathString];
-    NSWorkspace * ws = [NSWorkspace sharedWorkspace];
-    [ws openFile:[fileURL path] withApplication:@"ImageOptim"];
+    NSString *applicationBundlePathString = [self.bundle pathForAuxiliaryExecutable:@"ImageOptim.app"];
+    NSString *executablePathString = [NSString stringWithFormat:@"%@%@", applicationBundlePathString, @"/Contents/MacOS/ImageOptim"];
+    [NSTask launchedTaskWithLaunchPath:executablePathString arguments:@[[fileURL path]]];
 }
 
 - (void)imageOptimInWorkspace
