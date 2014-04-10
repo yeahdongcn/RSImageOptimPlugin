@@ -12,7 +12,7 @@ Xcode 5.0+ on OS X 10.9+.
 
 ##Installation
 
-#### Alcatraz (NOT AVAILABLE YET)
+#### [Alcatraz](https://github.com/supermarin/Alcatraz) (NOT AVAILABLE YET)
 
 * [Alcatraz](https://github.com/supermarin/Alcatraz) is the recommended method of installing this plugin.
 * Relaunch Xcode.
