@@ -1,10 +1,42 @@
-RSImageOptimPlugin
-==================
+#RSImageOptimPlugin
 
-Plugin for Xcode to optimize images using ImageOptim.
+Xcode plugin to optimize images using [ImageOptim](https://github.com/pornel/ImageOptim).
 
-License
-------------
+![menu](https://raw.githubusercontent.com/yeahdongcn/RSImageOptimPlugin/master/RSImageOptimPlugin-screenshot@2x.png)
+
+![ImageOptim](https://raw.githubusercontent.com/yeahdongcn/RSImageOptimPlugin/master/ImageOptim-screenshot@2x.png)
+
+##Requirements
+Xcode 5.0+ on OS X 10.9+.
+
+##Installation
+
+#### Alcatraz (NOT AVAILABLE YET)
+
+* [Alcatraz](https://github.com/supermarin/Alcatraz) is the recommended method of installing this plugin.
+* Relaunch Xcode.
+
+#### Build from Source
+
+* Build the Xcode project. The plug-in will automatically be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`. 
+* Relaunch Xcode.
+
+To uninstall, just remove the plugin from `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins` and restart Xcode.
+
+## How does it work?
+
+All the commands are laid at the bottom of the menu `File`.
+
+* Use the menu `ImageOptim` to optimize all images in the workspace immediately.
+
+* Use the menu `Enable Auto ImageOptim` to toggle whether automatic optimization should be enabled. Once this has been enabled, `ImageOptim` will be launched automatically to optimize the new added image files. 
+
+##Thanks
+
+Thanks [Pornel](https://github.com/pornel)'s open source GUI image optimizer for Mac [ImageOptim](https://imageoptim.com).
+
+##License
+
     The MIT License (MIT)
 
     Copyright (c) 2012-2014 P.D.Q.
