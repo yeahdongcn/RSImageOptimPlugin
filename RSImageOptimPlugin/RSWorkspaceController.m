@@ -24,10 +24,8 @@
 + (IDEWorkspaceWindowController *)keyWindowController
 {
     NSArray *workspaceWindowControllers = [NSClassFromString(@"IDEWorkspaceWindowController") valueForKey:@"workspaceWindowControllers"];
-    for (IDEWorkspaceWindowController *controller in workspaceWindowControllers)
-    {
-        if (controller.window.isKeyWindow)
-        {
+    for (IDEWorkspaceWindowController *controller in workspaceWindowControllers) {
+        if (controller.window.isKeyWindow) {
             return controller;
         }
     }
@@ -43,15 +41,13 @@
 {
     IDEWorkspace *workspace = [self workspaceForKeyWindow];
     
-    if (workspace == nil)
-    {
+    if (workspace == nil) {
         return nil;
     }
     
     IDEIndexCollection *indexCollection = [workspace.index filesContaining:fileName anchorStart:NO anchorEnd:NO subsequence:NO ignoreCase:NO cancelWhen:nil];
     
-    for(DVTFilePath *filePath in indexCollection)
-    {
+    for(DVTFilePath *filePath in indexCollection) {
         return filePath.pathString;
     }
     

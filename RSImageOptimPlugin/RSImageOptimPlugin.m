@@ -42,11 +42,9 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
 - (NSArray *)imageExtensions
 {
     if (!_imageExtensions) {
-        NSMutableArray *extensions = [NSMutableArray array];
-        [extensions addObjectsFromArray:@[@"png", @"PNG"]];
-        [extensions addObjectsFromArray:@[@"jpg", @"JPG", @"jpeg", @"JPEG"]];
-        [extensions addObjectsFromArray:@[@"gif", @"GIF"]];
-        _imageExtensions = [NSArray arrayWithArray:extensions];
+        _imageExtensions = @[@"png", @"PNG",
+                             @"jpg", @"JPG", @"jpeg", @"JPEG",
+                             @"gif", @"GIF"];
     }
     return _imageExtensions;
 }
@@ -61,7 +59,26 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
 
 - (void)imageOptimInWorkspace
 {
-    [self doImageOptimWithPathString:[RSWorkspaceController currentWorkspaceDirectoryPath]];
+    NSString *pathString = [RSWorkspaceController currentWorkspaceDirectoryPath];
+    if (pathString) {
+        NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:pathString];
+        NSString *filePathString = nil;
+        BOOL currentWorkspaceHasImages = NO;
+        while ((filePathString = [enumerator nextObject])) {
+            if ([self.imageExtensions containsObject:[filePathString pathExtension]]) {
+                currentWorkspaceHasImages = YES;
+            }
+        }
+        if (currentWorkspaceHasImages) {
+            [self doImageOptimWithPathString:pathString];
+        } else {
+            NSAlert *alert = [NSAlert alertWithMessageText:@"No image files in your current workspace." defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+            [alert runModal];
+        }
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Open an Xcode project or workspace first." defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        [alert runModal];
+    }
 }
 
 - (BOOL)isPathStringValid:(NSString *)pathString
