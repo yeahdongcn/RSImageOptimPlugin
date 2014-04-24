@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ImageOptim Einstellungen</title>
+<link rel="stylesheet" href="../../style.css" type="text/css">
+<meta name="AppleTitle" content="ImageOptim Preferences Help">
+<meta name="AppleIcon" content="../../ImageOptim.icns">
+<meta name="AppleFont" content="Lucida Grande,Helvetica,Arial">
+<meta name="AppleSearchResultsFont" content="Lucida Grande,Geneva,Arial">
+<meta name="description" content="ImageOptim Preferences">
+</head>
+<body>
+    <h1>ImageOptim Einstellungen</h1>
+    <p><a href="index.html">« Zurück zum index</a></p>
+    <h2>Allgemeine Einstellungen</h2>
+    <dl>
+<dt>Dateiberechtigungen, -attribute und Hardlinks erhalten</dt>
+      <dd>
+        <p>Statt Löschen alter Datei schriftlich eine neue mit dem gleichen Namen, nur ersetzt alte Datei der Inhalt an Ort und Stelle. Dadurch wird sichergestellt, dass alle Hardlinks , Aliasnamen, Datei Besitzer, die Berechtigungen , erweiterte Dateiattribute werden die gleichen bleiben.</p>
+        <p>Es ist nicht etwas schneller, um Berechtigungen zu bewahren.</p>
+      </dd>
+      <dt>PNG: Entferne alle optionalen Segmente</dt>
+      <dd>
+        <p>Diese Einstellung ist nur ratsam, wenn man Dateien für das Internet optimiert.</p>
+        <p data-role="strip-dpi">Other invisible information is removed as well, such as DPI and comments.</p>
+      </dd>
+      <dt>JPEG: Entferne EXIF Markierungen und Kommentare</dt>
+      <dd>
+        <p>Entfernt Metadaten, wie z.B. Programmnamen oder das Kameramodell aus den Bildern.</p>
+        <p data-role="strip-copyright">Embedded copyright information is removed as well. Please note that generally images are protected by copyright law regardless whether they contain such invisible metadata or not.</p>
+      </dd>
+    </dl>
+<h2>Werkzeuge</h2>
+    <p data-role="slow-tools">Zopfli and PNGOUT are very good PNG compressors, but are very slow. Disable them if you need to optimize PNG files quickly (leave only AdvPNG for fastest, but still good compression).</p>
+    <p data-role="dirty-alpha-tools">Zopfli and OptiPNG will clean RGB values of transparent pixels (known as “dirty alpha”). Disable these two tools if you're optimizing special files that use alpha channel for something else than transparency (e.g. heightmap in game data files).</p>
+    <div id="jpegoptim">
+      <h2>JPEGOptim</h2>
+      <dl>
+<dt>Maximale Qualität</dt>
+        <dd>
+          <p>Wenn diese Einstellung auf 100% gesetzt wird, werden die Bilddateien <strong>verlustfrei</strong> gespeichert.</p>
+          <p>Jede Einstellung unter 100% resultiert in <strong>qualitativ schlechteren</strong> Ergebnissen.</p>
+        </dd>
+      </dl>
+</div>
+    <div id="pngout">
+      <h2>PNGOUT</h2>
+      <dl>
+<dt>Art der Optimierung</dt>
+        <dd>
+          <p>PNGOUT ist sehr wirksam, aber sehr langsam. Verwenden Sie die unteren Ebene, wenn Sie ungeduldig sind.</p>
+        </dd>
+        <dt>Breche bei zu langer Optimierung ab</dt>
+        <dd>
+          <p>PNGOUT kann bei großen Bilddateien unter Umständen <em>sehr lange</em> für eine Optimierung brauchen. Diese Option beendet PNGOUT nach einer Minute.</p>
+        </dd>
+      </dl>
+</div>
+    <div id="optipng">
+      <h2>OptiPNG</h2>
+      <dl>
+<dt>Grad der Optimierung</dt>
+        <dd>
+          <p>Anzahl der unterschiedlichen Einstellungskombinationen getestet. Es ist selten sinnvoll, sie zu alle versuchen.</p>
+        </dd>
+        <dt>Erstelle die Bilder interlaced (progressive)</dt>
+        <dd>
+          <p>Interlaced Bilder sehen besser aus, wenn sie teilweise geladen sind, aber in der Regel ist die Interlace Kompression weniger effizient.</p>
+          <p>Diese Checkbox hat drei Zustände: Wenn aktiviert, werden Bilder gezwungen interlaced zuwerden. Wenn gemischt, es wird immer Datei Interlace unverändert , werden unkontrolliert von Interlace- Dateien zu entfernen.</p>
+        </dd>
+      </dl>
+</div>
+    <div id="gifsicle">
+      <h2>Gifsicle</h2>
+      <p>Für beste Kompression, sollten Sie GIF-Dateien in PNG-Dateien (ImageOptim macht das nicht automatisch) konvertieren.</p>
+    </div>
+  </body>
+</html>

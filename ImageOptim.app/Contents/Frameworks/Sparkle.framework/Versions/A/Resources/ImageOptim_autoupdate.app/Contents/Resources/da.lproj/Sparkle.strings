@@ -1,0 +1,100 @@
+/* No comment provided by engineer. */
+"%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?" = "%1$@ %2$@ er blevet hentet og er klart til brug! Vil du installere den og genstarte %1$@ nu?";
+
+/* No comment provided by engineer. */
+"%1$@ can't be updated when it's running from a read-only volume like a disk image or an optical drive. Move %1$@ to your Applications folder, relaunch it from there, and try again." = "%1$@ kan ikke opdateres når det afvikles fra en skrivebeskyttet enhed, f.eks. et diskbillede eller et optisk drev. Flyt %1$@ til din Programmer-mappe, og start det igen derfra, og prøv igen.";
+
+/* No comment provided by engineer. */
+"%@ %@ is currently the newest version available." = "%1$@ %2$@ er den nyeste tilgængelige version.";
+
+/* No comment provided by engineer. */
+"%@ %@ is now available--you have %@. Would you like to download it now?" = "%1$@ %2$@ er nu tilgængelig - du har %3$@. Vil du hente den nu?";
+
+/* No comment provided by engineer. */
+"%@ downloaded" = "%@ hentet";
+
+/* No comment provided by engineer. */
+"%@ of %@" = "%1$@ af %2$@";
+
+/* No comment provided by engineer. */
+"A new version of %@ is available!" = "En ny version af %@ er tilgængelig!";
+
+/* No comment provided by engineer. */
+"A new version of %@ is ready to install!" = "En ny version af %@ er klar til installering!";
+
+/* No comment provided by engineer. */
+"An error occurred in retrieving update information. Please try again later." = "Der skete en fejl under hentning af opdateringsinformation. Prøv venligst igen senere.";
+
+/* No comment provided by engineer. */
+"An error occurred while downloading the update. Please try again later." = "Der opstod en fejl mens opdateringen blev hentet. Prøv venligst igen senere.";
+
+/* No comment provided by engineer. */
+"An error occurred while extracting the archive. Please try again later." = "Der skete en fejl under udpakning af arkivet. Prøv venligst igen senere.";
+
+/* No comment provided by engineer. */
+"An error occurred while installing the update. Please try again later." = "Der opstod en fejl under installering af opdateringen. Prøv venligst igen senere..";
+
+/* No comment provided by engineer. */
+"An error occurred while parsing the update feed." = "Der opstod en fejl under kontrol af opdateringen.";
+
+/* No comment provided by engineer. */
+"An error occurred while relaunching %1$@, but the new version will be available next time you run %1$@." = "Der opstod en fejl under genstart af %1$@, men den nye version er klar næste gang du starter %1$@.";
+
+/* the unit for bytes */
+"B" = "B";
+
+/* No comment provided by engineer. */
+"Cancel" = "Annuller";
+
+/* No comment provided by engineer. */
+"Cancel Update" = "Annuller opdatering";
+
+/* No comment provided by engineer. */
+"Checking for updates..." = "Søger efter opdateringer…";
+
+/* Take care not to overflow the status window. */
+"Downloading update..." = "Henter opdatering…";
+
+/* Take care not to overflow the status window. */
+"Extracting update..." = "Udpakker opdatering…";
+
+/* the unit for gigabytes */
+"GB" = "GB";
+
+/* No comment provided by engineer. */
+"Install and Relaunch" = "Installer og genstart";
+
+/* Take care not to overflow the status window. */
+"Installing update..." = "Installerer opdatering…";
+
+/* the unit for kilobytes */
+"KB" = "KB";
+
+/* the unit for megabytes */
+"MB" = "MB";
+
+/* OK button. */
+"OK" = "OK";
+
+/* Status message on progress window once download has finished. */
+"Ready to Install" = "Klar til installering";
+
+/* Message that is optionally shown at startup to allow users to turn on/off update checks. */
+"Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu." = "Skal %1$@ automatisk søge efter opdateringer? Du kan altid søge efter opdateringer manuelt i %1$@-menuen.";
+
+/* No comment provided by engineer. */
+"Update Error!" = "Opdateringsfejl!";
+
+/* No comment provided by engineer. */
+"Updating %@" = "Opdaterer %@";
+
+/* 'Error' message when the user checks for updates but is already current or the feed doesn't contain any updates. (not necessarily shown in UI) */
+"You already have the newest version of %@." = "Du har allerede den nyeste version af %@.";
+
+/* Status message shown when the user checks for updates but is already current or the feed doesn't contain any updates. */
+"You're up-to-date!" = "Du er opdateret!";
+
+/* Alternative name for "Install" button if we have a paid update or other update
+	without a download but with a URL. */
+
+"Learn More..." = "Læs mere…";
