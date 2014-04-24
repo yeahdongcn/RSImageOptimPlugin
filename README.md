@@ -6,6 +6,8 @@ Xcode plugin to optimize images using [ImageOptim](https://github.com/pornel/Ima
 
 ![ImageOptim](https://raw.githubusercontent.com/yeahdongcn/RSImageOptimPlugin/master/ImageOptim-screenshot@2x.png)
 
+##TODO
+
 ##Requirements
 
 Xcode 5.0+ on OS X 10.9+.
