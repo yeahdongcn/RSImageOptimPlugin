@@ -1,5 +1,8 @@
 #RSImageOptimPlugin
 
+[![Total views](https://sourcegraph.com/api/repos/github.com/yeahdongcn/RSImageOptimPlugin/counters/views.png)](https://sourcegraph.com/github.com/yeahdongcn/RSImageOptimPlugin)
+[![Views in the last 24 hours](https://sourcegraph.com/api/repos/github.com/yeahdongcn/RSImageOptimPlugin/counters/views-24h.png)](https://sourcegraph.com/github.com/yeahdongcn/RSImageOptimPlugin)
+
 Xcode plugin to optimize images using [ImageOptim](https://github.com/pornel/ImageOptim).
 
 ![menu](https://raw.githubusercontent.com/yeahdongcn/RSImageOptimPlugin/master/RSImageOptimPlugin-screenshot@2x.png)
