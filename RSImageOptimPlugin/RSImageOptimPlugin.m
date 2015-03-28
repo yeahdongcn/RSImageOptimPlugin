@@ -7,23 +7,23 @@
 //
 
 #import "RSImageOptimPlugin.h"
-
-#import "IDEFoundation.h"
-
 #import "RSWorkspaceController.h"
+#import "IDEFoundation.h"
 
 static RSImageOptimPlugin *sharedPlugin;
 
 @interface RSImageOptimPlugin()
 
 @property (nonatomic, strong) NSBundle *bundle;
-
 @property (nonatomic, strong) NSArray *imageExtensions;
+@property (nonatomic, strong) NSArray *excludes;
 
 @end
 
-static NSString *const kRSImageOptimPlugin        = @"com.pdq.rsimageoptimplugin";
-static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin.auto";
+static NSString *const kRSImageOptimPlugin               = @"com.pdq.rsimageoptimplugin";
+static NSString *const kRSImageOptimPluginAutoKey        = @"com.pdq.rsimageoptimplugin.auto";
+static NSString *const kRSImageOptimExcludePathExtension = @"conf";
+static NSString *const kRSImageOptimExcludeFileName      = @"exclude";
 
 @implementation RSImageOptimPlugin
 
@@ -49,12 +49,48 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
     return _imageExtensions;
 }
 
+- (NSArray *)excludes
+{
+    if (!_excludes) {
+        NSString *pathString = [RSWorkspaceController currentWorkspaceDirectoryPath];
+        if (pathString) {
+            NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:pathString];
+            NSString *filePathString = nil;
+            while ((filePathString = [enumerator nextObject])) {
+                if ([kRSImageOptimExcludePathExtension isEqualToString:[[filePathString pathExtension] lowercaseString]]
+                    && [[filePathString lowercaseString] rangeOfString:kRSImageOptimExcludeFileName].length > 0) {
+                    NSError *error = nil;
+                    NSString *contentsOfFile = [NSString stringWithContentsOfFile:filePathString encoding:NSUTF8StringEncoding error:&error];
+                    if (!error) {
+                        NSArray *list = [contentsOfFile componentsSeparatedByString:@"#"];
+                        if (list && [list count] > 0) {
+                            _excludes = list;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return _excludes;
+}
+
 - (void)doImageOptimWithPathString:(NSString *)pathString
 {
-    NSURL *fileURL = [NSURL fileURLWithPath:pathString];
-    NSString *applicationBundlePathString = [self.bundle pathForAuxiliaryExecutable:@"ImageOptim.app"];
-    NSString *executablePathString = [NSString stringWithFormat:@"%@%@", applicationBundlePathString, @"/Contents/MacOS/ImageOptim"];
-    [NSTask launchedTaskWithLaunchPath:executablePathString arguments:@[[fileURL path]]];
+    BOOL isExcluded = NO;
+    if (self.excludes) {
+        for (NSString *exclude in self.excludes) {
+            if ([[pathString lowercaseString] rangeOfString:[exclude lowercaseString]].length > 0) {
+                isExcluded = YES;
+                break;
+            }
+        }
+    }
+    if (!isExcluded) {
+        NSURL *fileURL = [NSURL fileURLWithPath:pathString];
+        NSString *applicationBundlePathString = [self.bundle pathForAuxiliaryExecutable:@"ImageOptim.app"];
+        NSString *executablePathString = [NSString stringWithFormat:@"%@%@", applicationBundlePathString, @"/Contents/MacOS/ImageOptim"];
+        [NSTask launchedTaskWithLaunchPath:executablePathString arguments:@[[fileURL path]]];
+    }
 }
 
 - (void)imageOptimInWorkspace
@@ -67,6 +103,7 @@ static NSString *const kRSImageOptimPluginAutoKey = @"com.pdq.rsimageoptimplugin
         while ((filePathString = [enumerator nextObject])) {
             if ([self.imageExtensions containsObject:[filePathString pathExtension]]) {
                 currentWorkspaceHasImages = YES;
+                break;
             }
         }
         if (currentWorkspaceHasImages) {
