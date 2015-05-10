@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>14A388a</string>
+	<string>14E11f</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -17,25 +17,25 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.8.1 git-7473b16</string>
+	<string>1.10.0 git-84a35e5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.8.1</string>
+	<string>1.9.0</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>6A1052d</string>
+	<string>6D1002</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>14A382</string>
+	<string>14D125</string>
 	<key>DTSDKName</key>
 	<string>macosx10.10</string>
 	<key>DTXcode</key>
-	<string>0610</string>
+	<string>0631</string>
 	<key>DTXcodeBuild</key>
-	<string>6A1052d</string>
+	<string>6D1002</string>
 	<key>SUAppendVersionNumber</key>
 	<string>1</string>
 	<key>SUEnableAutomatedDowngrades</key>
@@ -43,6 +43,6 @@
 	<key>SUNormalizeInstalledApplicationName</key>
 	<string>0</string>
 	<key>SURelaunchToolName</key>
-	<string>ImageOptim_Autoupdate</string>
+	<string>Autoupdate</string>
 </dict>
 </plist>
