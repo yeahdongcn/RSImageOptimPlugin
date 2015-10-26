@@ -201,18 +201,21 @@ static NSString *const kRSImageOptimExcludeFileName      = @"exclude";
     if (self = [super init]) {
         self.bundle = plugin;
         
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"File"];
-        if (menuItem) {
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"ImageOptim" action:@selector(imageOptimInWorkspace) keyEquivalent:@""];
-            [actionMenuItem setTarget:self];
-            [[menuItem submenu] addItem:actionMenuItem];
-            
-            NSMenuItem *autoMenuItem = [[NSMenuItem alloc] initWithTitle:@"Enable Auto ImageOptim" action:@selector(switch:) keyEquivalent:@""];
-            [autoMenuItem setState:[[[NSUserDefaults standardUserDefaults] objectForKey:kRSImageOptimPluginAutoKey] boolValue] ? NSOnState : NSOffState];
-            [autoMenuItem setTarget:self];
-            [[menuItem submenu] addItem:autoMenuItem];
-        }
+        __weak __typeof(self)weakself = self;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"File"];
+            if (menuItem) {
+                [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
+                NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"ImageOptim" action:@selector(imageOptimInWorkspace) keyEquivalent:@""];
+                [actionMenuItem setTarget:self];
+                [[menuItem submenu] addItem:actionMenuItem];
+                
+                NSMenuItem *autoMenuItem = [[NSMenuItem alloc] initWithTitle:@"Enable Auto ImageOptim" action:@selector(switch:) keyEquivalent:@""];
+                [autoMenuItem setState:[[[NSUserDefaults standardUserDefaults] objectForKey:kRSImageOptimPluginAutoKey] boolValue] ? NSOnState : NSOffState];
+                [autoMenuItem setTarget:weakself];
+                [[menuItem submenu] addItem:autoMenuItem];
+            }
+        }];
         
         [self startListen];
     }
