@@ -138,7 +138,13 @@ static NSString *const kRSImageOptimExcludeFileName      = @"exclude";
             if ([self isPathStringValid:pathString]) {
                 return pathString;
             }
-        }
+        } else if ([object isKindOfClass:NSClassFromString(@"IDEFileReference")]) {
+            IDEFileReference *reference = object;
+            NSString *pathString = reference.resolvedFilePath.pathString;
+            if ([self isPathStringValid:pathString]) {
+                return pathString;
+            }
+        }        
     }
     return nil;
 }
